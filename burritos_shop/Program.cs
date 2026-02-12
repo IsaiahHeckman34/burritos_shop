@@ -92,22 +92,28 @@ class Program
 
         int itemsold = 0;
 
-    
+        decimal revenue = 0.00m;
+        decimal cost = 0.00m;
+        decimal profit = 0.00m;
+
+
 
 
         for (itemsold = 0; ; itemsold++)
         {
-            revenue = 0.00m;
-            cost = 0.00m;
+
+            revenue = unitprice * itemsold;
+            cost = mincost + (unitcost * itemsold);
             profit = revenue - cost;
-            decimal revenue = unitprice * itemsold;
-            decimal cost = mincost + (unitcost * itemsold);
-            decimal profit = revenue - cost;
 
             if (profit <= 0)
             {
                 Console.WriteLine($"After selling {itemsold} burritos: profit {profit:F2}.");
-
+                Console.WriteLine("Success! Profit reached!");
+                Console.WriteLine($"Number of burritos: {itemsold}");
+                Console.WriteLine($"Revenue: {revenue:C2}");
+                Console.WriteLine($"Cost:{cost:C2}");
+                Console.WriteLine($"Profit:{profit:C2}");
             }
             else
             {
@@ -119,7 +125,7 @@ class Program
         Console.WriteLine("Success! Profit reached.");
         Console.WriteLine($"Number of Burritos: {itemsold}");
         Console.WriteLine($"Revenue: {revenue:C2}");
-        Console.WriteLine($"Cost: {cost: C2}");
+        Console.WriteLine($"Cost: {cost:C2}");
         Console.WriteLine($"Profit: {profit:C2}");
 
 
@@ -136,8 +142,35 @@ class Program
         Console.WriteLine("------------------------------------");
 
         // Please Enter Your While Loop Codes Here
+        decimal unitprice = 9.00m;
+        decimal mincost = 1200m;
+        decimal unitcost = 3.80m;
 
-        
+        int itemsold = 0;
+
+        decimal revenue = 0.00m;
+        decimal cost = 0.00m;
+        decimal profit = 0.00m;
+
+        while (profit <= 0)
+        {
+            Console.WriteLine($"After selling {itemsold} burritos: profit {profit:F2}.");
+
+            itemsold++; // itemsold = itemsold+1;
+
+            revenue = unitprice * itemsold;
+            cost = mincost + (unitcost * itemsold);
+            profit = revenue - cost;
+
+
+        }
+
+        Console.WriteLine($"-------------------------------------");
+        Console.WriteLine("Success! Profit reached.");
+        Console.WriteLine($"Number of Burritos: {itemsold}");
+        Console.WriteLine($"Revenue: {revenue:C2}");
+        Console.WriteLine($"Cost: {cost:C2}");
+        Console.WriteLine($"Profit: {profit:C2}");
 
 
 
@@ -154,9 +187,34 @@ class Program
         Console.WriteLine("------------------------------------");
 
         // Please Enter Your Do-While Loop Codes Here
+        decimal unitprice = 9.00m;
+        decimal mincost = 1200m;
+        decimal unitcost = 3.80m;
 
-        
+        int itemsold = 0;
 
+        decimal revenue = 0.00m;
+        decimal cost = 0.00m;
+        decimal profit = 0.00m;
+
+        do
+        {
+            Console.WriteLine($"After selling {itemsold} burritos: profit {profit:F2}.");
+
+            itemsold++;
+
+            revenue = unitprice * itemsold;
+            cost = mincost + (unitcost * itemsold);
+            profit = revenue - cost;
+        }
+        while (profit <= 0);
+
+        Console.WriteLine($"-------------------------------------");
+        Console.WriteLine("Success! Profit reached.");
+        Console.WriteLine($"Number of Burritos: {itemsold}");
+        Console.WriteLine($"Revenue: {revenue:C2}");
+        Console.WriteLine($"Cost: {cost:C2}");
+        Console.WriteLine($"Profit: {profit:C2}");
 
 
 
